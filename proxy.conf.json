@@ -1,0 +1,24 @@
+{
+  "/api/*": {
+    "target": "http://192.168.56.1:9000",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/api" : ""}
+  },
+  "/boot/*": {
+    "target": "http://3.21.184.239:8083/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/boot" : ""}
+  },
+  
+ "/video/*": {
+    "target": "http://3.21.184.239:8081/",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/video" : ""}
+  }
+}
