@@ -1,0 +1,305 @@
+<app-processing [showLoading]="showProcessing"></app-processing>
+<div style="background-image: url('assets/img/indexbackground.png'); background-repeat: no-repeat;background-size: 100% 100%;">
+ 
+    <div class="text-center" style="padding-top: 60px;">  
+    <img src="assets/img/finallogo.svg"  alt="logo" width="300" height="300">
+    </div>
+    <div class="container">
+                <div class="row">
+                    <div class="col-md-6" style="padding-left:80px;">
+    
+                        <h1 class="white" style="font-size: 25px;"> <b>Welcome to QueenPrime</b></h1>
+                        <br>
+                        <h4 class="white" style="font-size: 18px;">Enjoy Using QueenPrime by Signing In</h4>
+                        <br>
+                        <p class="white">-&nbsp;Latest movies and tv shows</p>
+                        <p class="white">-&nbsp;Create your own list</p>
+                        <p class="white">-&nbsp;High quality streaming</p>
+                        <br>
+                      <!-- <button type="button" class="btn rectangle">Enter Queenprime</button>-->
+                      <button type="button" class="btn rectangle" style="font-size:16px; font-family: Univia Pro;border: black;" (click)="openModal(template)">
+                       <b> Enter Queenprime</b>
+                      </button>
+                      <ng-template #template>
+                        <div class="modal-header black">
+                          
+                          <div style="margin-left:150px;"><img src="assets/img/finallogo.svg" alt="" width="200" >
+                          </div>
+                          
+                          <button type="button" class="close pull-right" aria-label="Close" style="color:white;" (click)="modalRef.hide()">
+                            <span aria-hidden="true">&times;</span>
+                            
+                          </button>
+                        
+                          
+                        </div>
+                        <div class="modal-body black">
+                          <div>
+                            <p style="color:white;font-size: 24px;margin: 20px;">Login</p>
+                          </div>
+                          <br>
+                          
+                            <form  name="form" *ngIf="!showOtp" (ngSubmit)="f.form.valid && checkEmail()" #f="ngForm" novalidate>
+                            <label for="num" style="color:#ebebeb;margin-left: 20px;">Enter your Phone Number or Email</label>
+                            <br>
+                            <br>
+                            <input type="email" class="form-control" placeholder="Enter your Phone Number or Email"
+                              name="email" [(ngModel)]="model.email" pattern="^(\d{10}|\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3}))$" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                              required>
+                            <div *ngIf="f.submitted && email.invalid" class="invalid-feedback" style="margin-left: 20px;">
+                              <div *ngIf="email.errors.required">Please enter a valid email address or phone number</div>                              
+                              <div *ngIf="email.errors.pattern">Email must be a valid email address or phone number</div>
+                            </div>  
+                            <div *ngIf="emailNotExist==true" style="margin-left: 20px;color:#dc3545">
+                              Sorry,we can't find an account with this email id/number.
+                            </div>
+                            <br>                
+                            <button class="btn rectangle1" >Login</button>
+                            <br>   
+                            <br>  
+                            <div class="text-center">    
+                            <a href="" style="color:white;">By Signing in you accept to our terms and conditions</a>
+                          </div>
+                            <br>
+                            <div class="text-center">
+                            <a style="color:white;">New User?</a>&nbsp;<a class="text-warning" style="color:#E2BF7F;"
+                              (click)="close();navigateTopage('register');">Register here</a>
+                            </div>
+                            <br>
+                            <br>
+                          </form> 
+                          <form name="form" *ngIf="showOtp" (ngSubmit)="f.form.valid && navigateTopageLogin('home')" #f="ngForm" novalidate>
+                            <label for="num" style="color:#ebebeb;margin-left: 20px;">Enter OTP sent to your Phone Number</label>
+                            <br>
+                            <br>
+                            <input type="text" class="form-control" placeholder="Enter OTP sent to your Phone Number"
+                              name="otp" [(ngModel)]="model.otp" #otp="ngModel" [ngClass]="{ 'is-invalid': f.submitted && otp.invalid }"
+                              required>
+                            <div *ngIf="f.submitted && otp.invalid" class="invalid-feedback" style="margin-left: 20px;">
+                              <div *ngIf="otp.errors.required">OTP is required</div>
+                            </div>
+                            <div *ngIf="otpFailed==true" style="margin-left: 20px;color:#dc3545">
+                             Please enter valid OTP.
+                            </div>
+                            <br>                 
+                            <button class="btn rectangle1" data-toggle="modal1" data-target="#myModal1">Enter</button>
+                            <br><br>
+                            <p class="text-center" style="color:white;">By Signing in you accept to our terms and conditions</p>
+                            <br>
+                            <div class="text-center">
+                            <a style="color:white;">New User?</a>&nbsp;
+                            <a class="text-warning" style="color:#E2BF7F;"(click)="close(); navigateTopage('register');">Register
+                              here</a>
+                          </div>
+                            <br>
+                        </form>
+                        </div>
+                      </ng-template>           
+                        
+                    </div>
+                       <div class="col-md-6">
+                        
+                         <img src="assets/img/image.png"  alt="images" width="380">
+    
+                        </div>
+                </div>
+            </div>
+            
+        </div>
+      
+    
+  
+    <br>
+    <br>
+    <br>
+    <br>
+    
+    <div>
+       <!--Carousel Wrapper-->
+        <div id="multiitem" class="carousel slide carousel-multi-item" data-ride="carousel" items="12"loop="true" autoPlay="true" autoPlayTimeout="1000" autoplayHoverPause="true">
+    
+         
+      <!--Indicators-->
+      
+      <!--/.Indicators-->
+    
+      <!--Slides-->
+                      <div class="carousel-inner" role="listbox">
+    
+                        <!--First slide-->
+                        <div class="carousel-item active">
+    
+                          <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/BlackWidow.jpg"  alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="100" height="150">
+                            </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/master.jpg"  alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="100" height="150">
+                            </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/thambi.jpg"  alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap" width="100" height="150">
+                            </div>
+                          </div>
+    
+    
+    
+                        </div>
+                        <!--/.First slide-->
+    
+                        <!--Second slide-->
+                        <div class="carousel-item">
+    
+                          <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/BlackWidow.jpg"  alt="Card image cap"width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap" width="100" height="150">
+                            </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap" width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="100" height="150">
+                            </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap" width="100" height="150">
+                                    
+                            </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                             <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="100" height="150">
+                               </div>
+                          </div>
+    
+                          <div class="col-md-1" style="float:left">
+                            <div class="card mb-1">
+                              <img class="card-img-top" src="assets/img/thambi.jpg"  alt="Card image cap" width="100" height="150">
+                               </div>
+                          </div>
+                           <div class="col-md-1" style="float:left">
+                           <div class="card mb-1">
+                            <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="100" height="150">
+                            </div>
+                          </div>
+    
+                        </div>
+                        <!--/.Second slide-->
+    
+                       
+    
+                      </div>
+                      <!--/.Slides-->
+    
+                       <a class="carousel-control-prev" href="#multiitem" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                      <a class="carousel-control-next" href="#multiitem" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                      </a>
+    
+                    </div>
+    <!--/.Carousel Wrapper-->
+    
+        </div>
+
+
+        <app-footer></app-footer>
+    
+    

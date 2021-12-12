@@ -1,0 +1,26 @@
+.btn:hover ~ .edit{
+    display : block;
+  }
+  .edit{
+    display:none;
+  }
+  .savebtn
+  {
+  
+    height: 48px;
+    width: 120px;
+    border-radius: 7px;
+    background: linear-gradient(180deg, #E2BF7F 0%, #D8A13E 100%);
+  
+  }
+  .cancelbtn
+  {
+  
+    box-sizing: border-box;
+    height: 48px;
+    width: 120px;
+    border: 1px solid #C6C6C6;
+    border-radius: 7px;
+    color: white;
+  
+  }

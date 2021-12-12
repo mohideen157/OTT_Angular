@@ -1,0 +1,221 @@
+<app-processing [showLoading]="showProcessing"></app-processing>
+<div class="row" style="background-color:black;">
+<div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 mx-auto text-center">  
+  <img src="assets/img/finallogo.svg"  alt="logo" width="200" height="80">
+  </div>
+</div>
+<br><br>
+<div class="row" style="background-color:black;">
+  <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 mx-auto">
+    <div class="register-photo" style="background-color:black;">
+      <div class="form-container">
+        <form name="form" *ngIf="showForm1" (ngSubmit)="f.form.valid && register()" #f="ngForm"
+          [mustMatch]="['password', 'confirmPassword']" novalidate>
+         <!-- {{f.form.valid | json}}-->
+
+          <h2 class="text-center" style="font-family: univia pro;color:white;font-size: 28px;">Register with
+            three simple
+            steps</h2>
+          <div class="steps-progressbar">
+            <ul>
+              <li class="active">Step1</li>
+              <li>Step2</li>
+              <li>Step3</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mx-auto">
+            <div class="form-group">
+              <label class="style1">Enter your Email ID
+              </label>
+              <input type="text" style="background-color: black; color:#ffffff;"  name="email" class="form-control" [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }" required email>
+              <!--<input type="text" style="background-color: black; color:#ffffff;" class="form-control" name="email"
+                [(ngModel)]="model.email" #email="ngModel" [ngClass]="{ 'is-invalid': f.submitted && email.invalid }"
+                required />-->
+              <div *ngIf="f.submitted && email.invalid" class="invalid-feedback">
+                <div *ngIf="email.errors.required">Email is required</div>
+                <div *ngIf="email.errors.email">Email must be a valid email address</div>
+                <!--<div *ngIf="email.errors"> Email already exist. kindly choose different.</div>-->
+              </div>
+              <!--<div *ngIf="email.value !== '' && email.untouched && email.invalid">
+                Email must be a valid email address
+              </div>-->
+              <div *ngIf="emailcheck==true" style="color:#dc3545">
+                Email already exist. kindly choose different.
+              </div>
+             </div>
+            <div class="form-group">
+              <label class="style1">Enter your Mobile Number
+              </label>
+              <input type="text" minlength="10" maxlength="10" style="background-color: black; color:#ffffff;" class="form-control" name="mobile"
+                [(ngModel)]="model.mobile" #mobile="ngModel" [ngClass]="{ 'is-invalid': f.submitted && mobile.invalid }"
+                required />
+              <div *ngIf="f.submitted && mobile.invalid" class="invalid-feedback">
+                <div *ngIf="mobile.errors.required">Mobile Number is required</div>
+                <div *ngIf="mobile.errors.minlength">mobile number should be 10 digits number required</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="style1">Create Password
+              </label>
+              <input style="background-color: black; color:#ffffff;" type="password" class="form-control"
+                name="password" [(ngModel)]="model.password" #password="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && password.invalid }" required minlength="4" maxlength="60"/>
+              <div *ngIf="f.submitted && password.invalid" class="invalid-feedback">
+                <div *ngIf="password.errors.required">Password is required</div>
+                <div *ngIf="password.errors.minlength">Your password must contain between 4 and 60 characters</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="style1">Confirm Password
+              </label>
+              <input style="background-color: black; color:#ffffff;" type="password" class="form-control"
+                name="confirmPassword" [(ngModel)]="model.confirmPassword" #confirmPassword="ngModel"
+                [ngClass]="{ 'is-invalid': f.submitted && confirmPassword.invalid }" required minlength="4" maxlength="60"/>
+              <div *ngIf="f.submitted && confirmPassword.invalid" class="invalid-feedback">
+                <div *ngIf="confirmPassword.errors.required">Confirm Password is required</div>
+                <div *ngIf="confirmPassword.errors.mustMatch">Passwords must match</div>
+              </div>
+            </div>
+            <div class="form-group">
+              <button class="btn btn-block rectangle2" style="background-color: #E2BF7F;">Next</button>
+              <br>
+              <div class="d-flex justify-content-center">
+                <strong style="color: white;">Have Account ?</strong>&nbsp;&nbsp;
+              <a class="already" style="  font-size: 15px;color: #E1BC79;" href="#"> Login now.</a>
+              </div>
+            </div>
+          </div>
+        </form>
+        <br>
+        <br>
+        <div class="block-heading" *ngIf="showForm2">
+          <h2 class="text-center" style="font-family: univia pro; color:white;font-size: 28px;">Select your plan
+          </h2>
+          <div class="steps-progressbar">
+            <ul>
+              <li class="previous">Step1</li>
+              <li class="active">Step2</li>
+              <li>Step3</li>
+            </ul>
+          </div>
+         
+            <div class="row justify-content-center">
+              <div class="col-md-5 col-lg-4"  *ngFor="let data of planList; index as i;">
+                <div class="clean-pricing-item">
+                    <br>
+                    <br>
+                    <br>
+                  <button class="btn btn-outline-light btn-block" [ngClass]="{'active': btnSelected == i}" type="button" (click)="checkButton(i,data)">
+                    <div class="heading">
+                      <h1><b>{{data.name}}</b></h1>
+                    </div>
+                    <div class="price">
+                      <h2><b>{{data.planValue}}</b></h2>
+                      <p>{{data.users}}</p>
+                    </div>
+                    <div class="features">
+                      <h3><span  [innerHTML]="data.description">&nbsp;</span>
+                        </h3>
+                    </div>
+                  </button>&nbsp;&nbsp;
+                </div>
+              </div>
+            <div class="col-12 col-md-8">
+              <br>
+              <br>
+              <div class="form-group">
+                  <button class="btn btn-block" style="background-color: #E1BC79;" type="submit" (click)="plan()" [disabled]="btnSelected===''">Next</button>
+              </div>
+            </div>
+          </div>
+       </div>
+
+
+
+        <form name="form" *ngIf="showForm3"  (ngSubmit)="f.form.valid && card()" #f="ngForm" novalidate>
+          <h2 class="text-center style1" >Enter your credit or debit card
+            details</h2>
+          <div class="steps-progressbar">
+            <ul>
+              <li class="previous">Step1</li>
+              <li class="previous">Step2</li>
+              <li class="active">Step3</li>
+            </ul>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 mx-auto">
+            <div class="form-group">
+              <label class="style1">Name as in Card
+              </label>
+              <input type="text" style="background-color: black; color:#ffffff;" class="form-control" name="name"
+                [(ngModel)]="model.name" #name="ngModel" [ngClass]="{ 'is-invalid': f.submitted && name.invalid }"
+                required />
+              <div *ngIf="f.submitted && name.invalid" class="invalid-feedback">
+                <div *ngIf="name.errors.required">Card Holder Name is required</div>
+              </div>              
+            </div>
+            <div class="form-group">
+              <label class="style1">Card Number
+              </label>
+              <input mask="0000-0000-0000-0000"  placeholder="XXXX-XXXX-XXXX-XXXX" type="text" style="background-color: black; color:#ffffff;" class="form-control" name="card_number"
+                [(ngModel)]="model.card_number" #card_number="ngModel" [ngClass]="{ 'is-invalid': f.submitted && card_number.invalid }"
+                required />
+              <div *ngIf="f.submitted && card_number.invalid" class="invalid-feedback">
+                <div *ngIf="card_number.errors.required">Card Number is required</div>
+                <div *ngIf="card_number.errors.mask">Card Number is invalid.</div>
+              </div>
+             
+                             
+            </div>
+            <div class="form-group">
+              <label class="style1">Expiry Date
+              </label>
+              <!--<input mask="00/00" id="startDate" placeholder="MM/YY" type="text" style="background-color: black; color:#ffffff;" class="form-control date-picker" name="expiry_date" 
+              [(ngModel)]="model.expiry_date" #expiry_date="ngModel" [ngClass]="{ 'is-invalid': f.submitted && expiry_date.invalid }"
+              required />-->
+              <input placeholder="MM/YYYY" type="text" style="background-color: black; color:#ffffff;" class="form-control" name="expiry_date" 
+              [(ngModel)]="model.expiry_date" #expiry_date="ngModel" [ngClass]="{ 'is-invalid': f.submitted && expiry_date.invalid }" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM-YYYY' }"
+              (onShown)="onOpenCalendar($event)" required />
+            <div *ngIf="f.submitted && expiry_date.invalid" class="invalid-feedback">
+              <div *ngIf="expiry_date.errors.required">Expiry Month is required</div>
+              
+            </div>              
+            </div>
+            
+            <div class="form-group">
+              <label class="style1">CVV
+              </label>
+              <input type="text" minlength="3" maxlength="4" style="background-color: black; color:#ffffff;" class="form-control" name="cvv"
+              [(ngModel)]="model.cvv" #cvv="ngModel" [ngClass]="{ 'is-invalid': f.submitted && cvv.invalid }"
+              required />
+            <div *ngIf="f.submitted && cvv.invalid" class="invalid-feedback">
+              <div *ngIf="cvv.errors.required">Security Code (cvv) is required</div>
+              <div *ngIf="cvv.errors.minlength">CVV should be minimum 3 digits number are required</div>
+            </div>               
+            </div>
+            <div class="form-check">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1"  name="exampleCheck1"
+              [(ngModel)]="model.exampleCheck1" #exampleCheck1="ngModel" [ngClass]="{ 'is-invalid': f.submitted && exampleCheck1.invalid }"
+              required />
+              <label class="form-check-label"
+                for="exampleCheck1" class="style1">By Clicking this you agree to our terms
+                and conditions</label>
+            <div *ngIf="f.submitted && exampleCheck1.invalid" class="invalid-feedback">
+              <div *ngIf="exampleCheck1.errors.required">Please select the checkbox</div>
+            </div>             
+              <br>
+              <br>
+
+            </div>
+            <div class="form-group"><button class="btn btn-block" style="background-color: #E1BC79;" >Subscribe</button></div>
+          </div>
+        </form>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+</div>
+<app-footer></app-footer>

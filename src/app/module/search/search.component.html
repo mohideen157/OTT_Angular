@@ -1,0 +1,367 @@
+<app-header></app-header>
+
+<br>
+
+<div style="display: inline-block;">
+    <button type="button" class="btn btn-secondary style1">Related Search titles: </button>
+    <button type="button" class="btn btn-secondary style">sample titles </button>
+    <button type="button" class="btn btn-secondary style">sample</button>
+    <button type="button" class="btn btn-secondary style">sample titles</button>
+    <button type="button" class="btn btn-secondary style">sample</button>
+    <button type="button" class="btn btn-secondary style">titles</button>
+  </div>
+
+
+  <!--Carousel Wrapper-->
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-interval="false" *ngIf="!showMovieScreen" >
+    <!--Indicators-->
+    <!--/.Indicators-->
+    <!--Slides-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active" >
+        <!--<div class="col-md-2" style="float:left;" *ngFor="let data of trendingMovieList">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="150" >
+                <div class="overlay">
+                  <div class="text">
+                        <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/asuran/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                        <h4 class="height">{{data.movie_name}}</h4>
+                        <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>-->
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50">
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/avengers/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                  </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/avengers/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                  </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/jagame/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                  </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left;">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50" >
+                <div class="overlay">
+                  <div class="text">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/shortfilm/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                    <h4 class="height">Movie Name</h4>
+                    <h5 class="height">Action&nbsp;|&nbsp;Drama</h5> 
+                  </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/vathi/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5> 
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/asuran/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!--/.First slide-->
+       </div>
+  <!--/.Carousel Wrapper-->
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example1" class="carousel slide carousel-multi-item" data-interval="false" *ngIf="!showMovieScreen">
+    <!--Indicators-->
+    
+    <!--/.Indicators-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active" >
+        <div class="col-md-2" style="float:left;">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50" >
+                <div class="overlay">
+                  <div class="text">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/avengers/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                    <h4 class="height">Movie Name</h4>
+                    <h5 class="height">Action&nbsp;|&nbsp;Drama</h5> 
+                  </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-2">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/jagame/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/need4speed/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left;">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50" >
+                <div class="overlay">
+                  <div class="text">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/shortfilm/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                    <h4 class="height">Movie Name</h4>
+                    <h5 class="height">Action&nbsp;|&nbsp;Drama</h5> 
+                  </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/vathi/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/asuran/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!--/.First slide-->
+      
+      <!--/.Second slide-->
+    </div>
+    <!--/.Slides-->
+      </div>
+  <!--/.Carousel Wrapper-->
+  <!--Carousel Wrapper-->
+  <div id="multi-item-example2" class="carousel slide carousel-multi-item" data-interval="false" *ngIf="!showMovieScreen">
+    <!--Indicators-->
+    
+    <!--/.Indicators-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active" >
+        <div class="col-md-2" style="float:left;">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50" >
+                <div class="overlay">
+                  <div class="text">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/avengers/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                    <h4 class="height">Movie Name</h4>
+                    <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>  
+                  </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/jagame/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/need4speed/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left;">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="assets/img/master.jpg" alt="Card image cap"  width="50" >
+                <div class="overlay">
+                  <div class="text">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/shortfilm/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                    <h4 class="height">Movie Name</h4>
+                    <h5 class="height">Action&nbsp;|&nbsp;Drama</h5> 
+                  </div>
+                 </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/thambi.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/vathi/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+        <div class="col-md-2" style="float:left">
+          <div class="card mb-1">
+            <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="assets/img/BlackWidow.jpg" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                     <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie('/video/HLS_Samples/asuran/index.m3u8')"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                     <h4 class="height">Movie Name</h4>
+                     <h5 class="height">Action&nbsp;|&nbsp;Drama</h5>
+                    </div>
+               </div>
+              </div>
+           </div>
+          </div>
+        </div>
+      </div>
+      <!--/.First slide-->
+          </div>
+    <!--/.Slides-->
+    
+    <div clas="row" *ngIf="showMovieScreen">
+        <div style="background-color: black; border: black; width: 100%; height: auto;">
+          <app-video-player [options]="options" (cancelFunction)="cancel($event)"></app-video-player>
+        </div>
+      </div>
+      
+
+  <app-footer></app-footer>

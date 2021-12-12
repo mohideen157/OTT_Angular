@@ -1,0 +1,52 @@
+{
+	"getMoviesList": {
+		"url": "http://static.videogular.com/assets/videos/videogular.mp4"
+	},
+	"register":{
+		"url":"/boot/user/register"
+	},
+	"card":{
+		"url":"/boot/user/card"
+	},
+	"checkEmailExist":{
+		"url":"/boot/user/checkUser"
+	},
+	"plan":{
+		"url":"/boot/user/subscription"
+	},
+	"value":{
+		"url":"/boot/allVideos"
+	},
+	"allCategories":{
+		"url":"/boot/allCategories"
+	},
+	"allPosters":
+	{
+		"url":"/boot/allPosters"
+	},
+	"entities":
+	{
+		"url":"/boot/allEntities"
+	},
+	"posters":
+	{
+		"url":"/boot/allPosters"
+	},
+	"Subscriptionplan":
+	{
+		"url":"/boot/Subscriptionplan"
+	},
+	"mylist":
+	{
+		"url":"/api/mylist"
+	},"mylistbyid":
+	{
+		"url":"/api/mylist"
+	},
+	"sentmylist":
+	{
+		"url":"/api/data/mylist"
+	}
+
+
+}

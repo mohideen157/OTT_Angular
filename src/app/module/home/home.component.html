@@ -1,0 +1,131 @@
+<app-header *ngIf="!showMovieScreen"></app-header>
+<div clas="row" *ngIf="!showMovieScreen">
+  <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 mx-auto">
+    <carousel [itemsPerSlide]="itemsPerSlideBanner"
+    [(activeSlide)]="activeSlideIndex"
+    [singleSlideOffset]="singleSlideOffset"
+    [noWrap]="!noWrap"
+    [interval]="false"
+    [startFromIndex]="5"
+    (slideRangeChange)="onSlideRangeChange($event)">
+    <!--<slide *ngFor="let slide of slides; let index=index" class="mx-auto">-->
+      <span>
+        <slide *ngFor="let datapost of postersList | slice:0:3;">
+  <img src="/video{{datapost.image}}" alt="image slide" style="display: block; width: 100%; height:400px; object-fit: cover;"> 
+  <br>
+  
+  <div class="carousel-caption d-none d-md-block" style="text-align: justify;">
+   
+    
+    <h1 style="font-family: Univia Pro; font-size: 21px;line-height: 1.2;">{{datapost.name}}</h1>
+    <span *ngFor="let value of datapost.video">
+    <h4 style="font-family: Univia Pro;  color:#D3D3D3; font-size: 16px;line-height:1.2;">{{value.movietype}}</h4>
+    <h3 style="color:white;font-family: Univia Pro; font-size: 16px;line-height: 1.2;">{{value.description}}</h3>
+  
+    
+    <button type="button" class="btn text-white" style="font-size: 18px;font-family: Univia Pro;" (click)="showMovie(value.filePath)"> <i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;&nbsp;Play</button>&nbsp;&nbsp;
+    <b style="font-size:24px;">|</b>&nbsp;&nbsp;
+    
+    <button type="button" class="btn text-white" style="font-size: 18px;font-family: Univia Pro;" (click)="navigateTopage('postermovie',datapost.id);"><img src="assets/img/moreinfo.svg"> &nbsp;&nbsp;More Info
+    </button>
+  </span>
+  </div>
+</slide>
+</span>
+
+  <!--</slide>-->
+  </carousel>
+    </div>
+</div>
+
+
+
+<!--/.Carousel Wrapper-->
+<!--Carousel Wrapper-->
+<span *ngFor="let data of categoriesList | slice:0:4;">
+<div id=multi-item-example1{{data.id}} class="carousel slide carousel-multi-item" data-interval="false" *ngIf="!showMovieScreen">
+  <!--Indicators-->
+  
+  <div>
+    <h2 style="color:white;padding: 30px;font-family: Univia Pro;font-size: 18px;"> {{data.name}}</h2>
+  </div>
+  <!--/.Indicators-->
+  <div class="carousel-inner" role="listbox" >
+    <!--First slide-->
+    <div class="carousel-item active" >
+        
+      <div class="col-md-2" style="float:left;" *ngFor="let entity of data.entities | slice:0:6;">
+        
+        <div class="card mb-1">
+          <div class="container">
+              <div class="zoom">
+                  <img class="card-img-top" src="/video{{entity.thumbnail}}" alt="Card image cap"  width="50" >
+              <div class="overlay">
+                <div class="text">
+                  <h1 class="height" style="font-size: 15px;" (click)="navigateTopage('movies',entity.id);">{{entity.name}}</h1>
+                  <span *ngFor="let videos of entity.video;">
+                    <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie(videos.filePath)"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                  <h5 class="height" style="font-size: 12px;">{{videos.movietype}}</h5> 
+                </span>
+                </div>
+               </div>
+              </div>
+           </div>
+         </div>
+       </div>
+     
+    <!--/.Second slide-->
+  </div>
+  <div class="carousel-item" >
+        
+    <div class="col-md-2" style="float:left;" *ngFor="let entity of data.entities | slice:6:12;">
+      
+      <div class="card mb-1">
+        <div class="container">
+            <div class="zoom">
+                <img class="card-img-top" src="/video{{entity.thumbnail}}" alt="Card image cap"  width="50" >
+            <div class="overlay">
+              <div class="text">
+                <h1 class="height" style="font-size: 15px;" (click)="navigateTopage('movies',entity.id);">{{entity.name}}</h1>
+                <span *ngFor="let videos of entity.video;">
+                  <button type="button" class="btn text-white" style="font-size: 20px;font-family: Univia Pro;" (click)="showMovie(videos.filePath)"><i style="font-size:24px" class="fa">&#xf144;</i>&nbsp;Play</button>
+                <h5 class="height" style="font-size: 12px;">{{videos.movietype}}</h5> 
+              </span>
+              </div>
+             </div>
+            </div>
+         </div>
+       </div>
+     </div>
+   
+  <!--/.Second slide-->
+</div>
+</div>
+ 
+  <!--/.Slides-->
+  <a class="carousel-control-prev" href=#multi-item-example1{{data.id}} role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href=#multi-item-example1{{data.id}} role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+
+</div>
+</span>
+
+<!--/.Carousel Wrapper-->
+
+
+
+<div clas="row" *ngIf="showMovieScreen">
+  <div style="background-color: black; border: black; width: 100%; height: auto;">
+    <app-video-player [options]="options" (cancelFunction)="cancel($event)"></app-video-player>
+  </div>
+</div>
+
+
+<app-footer *ngIf="!showMovieScreen"></app-footer>
+
+

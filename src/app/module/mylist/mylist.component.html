@@ -1,0 +1,66 @@
+<app-header></app-header>
+
+<br>
+
+
+
+
+<div id="multi-item-example" class="carousel slide carousel-multi-item" data-interval="false" *ngIf="!showMovieScreen">
+    <!--Indicators-->
+   
+    <!--/.Indicators-->
+    <div class="carousel-inner" role="listbox">
+      <!--First slide-->
+      <div class="carousel-item active" >
+        <div class="col-md-2" style="float:left;" *ngFor="let entity of entitylist">
+          <div class="card mb-1">
+            <div class="container">
+                <div class="zoom">
+                    <img class="card-img-top" src="/video{{entity.thumbnail}}" alt="Card image cap"  width="50" >
+                    <div class="overlay">
+                        <div class="text">
+                            <div class="row">
+                                <div class="col"  >
+                             <h4 class="height">{{entity.name}}</h4>
+                             <span *ngFor="let videos of entity.video;">
+                             <h5 class="height">{{videos.movietype}}</h5>
+                            </span>
+                            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            <div class="col-md-1" style="background-color: transparent;">
+                            
+                                <button mat-button [matMenuTriggerFor]="aboveMenu" style="background-color:transparent;border-color:transparent;">
+                                  <i class="fa fa-ellipsis-v" style="color: white;" aria-hidden="true"></i>
+                                </button>
+                                  <mat-menu #aboveMenu="matMenu" yPosition="above">
+                                    <button mat-menu-item>Remove from list </button>
+                                    <button mat-menu-item>Movie Info</button>
+                                  </mat-menu>
+
+                             </div>
+                            </div>
+                          </div>
+                       </div>
+                </div>
+             </div>
+           </div>
+        </div>
+        
+      </div>
+      <!--/.First slide-->
+      
+      <!--/.Second slide-->
+    </div>
+    <!--/.Slides-->
+      </div>
+  <!--Carousel Wrapper-->
+  
+   
+    
+    <div clas="row" *ngIf="showMovieScreen">
+        <div style="background-color: black; border: black; width: 100%; height: auto;">
+          <app-video-player [options]="options" (cancelFunction)="cancel($event)"></app-video-player>
+        </div>
+      </div>
+      
+
+  <app-footer></app-footer>

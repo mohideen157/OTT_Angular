@@ -1,0 +1,51 @@
+.white{
+    color:white;
+    font-family: Univia Pro;
+}
+.rectangle {
+height: 48px;
+width: 324.99px;
+border-radius: 7px;
+background: linear-gradient(180deg, #C79C37 0%, #C79C37 100%);
+color: #000000;
+}
+img{
+cursor: no-drop;
+}
+.rectangle1{
+    border-radius: 7px;
+  background: linear-gradient(180deg, #C79C37 0%, #C79C37 100%);
+  width: 90%;
+  margin-left: 20px;
+}
+.black
+{
+  background-color:black;
+  border-color: black;
+}
+
+input[type=email] {
+ 
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #5e5d5d;
+  background-color:black;
+  color:white;
+  margin-left: 20px;
+  width: 90%;
+  height: 75%; 
+
+}
+
+input[type=text] {
+ 
+  box-sizing: border-box;
+  border: none;
+  border-bottom: 2px solid #5e5d5d;
+  background-color:black;
+  color:white;
+  margin-left: 20px;
+  width: 90%;
+  height: 75%; 
+
+}

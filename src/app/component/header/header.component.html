@@ -1,0 +1,58 @@
+<app-processing [showLoading]="showProcessing"></app-processing>
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: black;border:black;overflow: hidden; font-family: Univia Pro; margin-top:-30px; margin-bottom:-30px;">
+  <a class="navbar-brand" (click)="navigateTopage('home');">
+  <!--<img src="assets/img/logo1.png" alt="" width="40" height="40"> <img src="assets/img/logo.png" alt="" width="150" height="50"></a>-->
+  <img src="assets/img/finallogo.svg" alt="" width="150" height="120"></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText">
+    <ul class="navbar-nav mr-auto" style="font-family: Univia Pro;font-size: 16px;">
+      <li class="nav-item">
+        <a class="nav-link" style="color:white;" [ngClass]="{'active-nav':selectedTab=='home'}" (click)="navigateTopage('home');">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:white;" [ngClass]="{'active-nav':selectedTab=='movies'}" (click)="navigateTopage('movies');">Movies</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:white;" [ngClass]="{'active-nav':selectedTab=='tv-shows'}">TV Shows</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" style="color:white;" [ngClass]="{'active-nav':selectedTab=='mylist'}"(click)="navigateTopage('mylist');" >My List</a>
+      </li>
+
+
+    </ul>
+    <span class="navbar-text">
+      <form class="form-inline my-2 my-lg-0">
+
+        <div class="form-group has-search">
+          
+          <input type="text" class="form-control" style="background-color:#403f3f;color: #ffffff;border:black" placeholder="Search...">&nbsp;&nbsp;
+          <span class="fa fa-search form-control-feedback" style="font-size: 16px;"></span>
+        </div>
+        &nbsp;
+        &nbsp;
+        <ul class="navbar-nav mr-auto" >
+         
+          
+                      <li class="nav-item dropdown" >
+                      <button mat-button [matMenuTriggerFor]="menu" class="style">My Profile</button>
+                        <mat-menu #menu="matMenu">
+                          <button mat-menu-item class="style" (click)="navigateTopage('profile');">Profile Name <img class="style1" src="assets/img/king.png"width="20" height="20"></button>
+                          <button mat-menu-item class="style" (click)="navigateTopage('account');">Account Settings &nbsp;<img class="style1" src="assets/img/settingicon.png"width="20" height="20"></button>
+                          <button mat-menu-item class="style">Help &nbsp;<img class="style1" src="assets/img/helpicon.png"width="20" height="20"></button>
+                          <button mat-menu-item class="style" (click)="logout()">Logout &nbsp;<img class="style1" src="assets/img/logouticon.png"width="20" height="20"></button>
+                          
+                          
+                        </mat-menu>
+                      </li>
+
+                     
+        </ul>
+      </form>
+      
+    </span>
+  </div>
+</nav>
